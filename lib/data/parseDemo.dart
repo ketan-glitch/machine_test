@@ -28,7 +28,7 @@ class _ParseDemoState extends State<ParseDemo> {
     await Services.getRecord().then((records){
       _record = records;
       _loading = false;
-
+      
       recordsElements = _record['Records'];
 
       recordElementsMap={
@@ -76,18 +76,18 @@ class _ParseDemoState extends State<ParseDemo> {
       body: Container(
         color: Colors.white,
         child: ListView.builder(
-            itemCount: 10,
-            itemBuilder: (context, index){
-              // for (int i =index; i<=index; i++) {
-              //   rec = recordsElements[i];
-              // }
-              // Record record = _record[index];
-              Data rec = _record[index];
-              return ListTile(
-                title: Text('rec'),
-                // subtitle: Text(rec.shortDescription),
-              );
-            },
+          itemCount: 10,
+          itemBuilder: (context, index){
+            // for (int i =index; i<=index; i++) {
+            //   rec = recordsElements[i];
+            // }
+            // Record record = _record[index];
+            Data rec = recordsElements[index];
+            return ListTile(
+              title: Text('${rec.totalRecords}'),
+              // subtitle: Text(rec.shortDescription),
+            );
+          },
         ),
       ),
     );
